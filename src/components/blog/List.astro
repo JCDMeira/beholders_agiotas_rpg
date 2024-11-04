@@ -10,6 +10,7 @@ const { posts } = Astro.props;
 ---
 
 <ul>
+  {console.log(posts)}
   {
     posts.map((post) => (
       <li class="mb-12 md:mb-20">

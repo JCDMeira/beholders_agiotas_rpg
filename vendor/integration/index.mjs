@@ -25,7 +25,7 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}) => {
         const resolvedVirtualModuleId = '\0' + virtualModuleId;
 
         const rawJsonConfig = await loadConfig(_themeConfig);
-        const { SITE, I18N, METADATA, APP_BLOG, UI, ANALYTICS } = configBuilder(rawJsonConfig);
+        const { SITE, I18N, METADATA, APP_BLOG, APP_SONG, UI, ANALYTICS } = configBuilder(rawJsonConfig);
 
         updateConfig({
           site: SITE.site,
@@ -49,6 +49,7 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}) => {
                     export const I18N = ${JSON.stringify(I18N)};
                     export const METADATA = ${JSON.stringify(METADATA)};
                     export const APP_BLOG = ${JSON.stringify(APP_BLOG)};
+                    export const APP_SONG = ${JSON.stringify(APP_SONG)};
                     export const UI = ${JSON.stringify(UI)};
                     export const ANALYTICS = ${JSON.stringify(ANALYTICS)};
                     `;

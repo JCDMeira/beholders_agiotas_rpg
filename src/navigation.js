@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink } from './utils/permalinks';
+import { getPermalink, getBlogPermalink, getSongPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -23,6 +23,10 @@ export const headerData = {
       //     href: getPermalink('/homes/personal'),
       //   },
       // ],
+    },
+    {
+      text: 'Canções',
+      href: getSongPermalink(),
     },
     {
       text: 'Sobre os Personagens',
