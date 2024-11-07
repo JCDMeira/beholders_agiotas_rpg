@@ -5,7 +5,7 @@ import type { Post } from '~/types';
 import { APP_BLOG } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
 
-export const PJS_NAMES = ['jean_meira', 'lolo', 'deyse'] as const;
+export const PJS_NAMES = ['elli', 'deyse', 'jean_meira', 'lolo'] as const;
 
 export const formatTagName = (tag: string) => {
   return tag
