@@ -1,0 +1,32 @@
+---
+import * as docs from '~/content/doc/docs.mdx';
+import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
+
+import merge from 'lodash.merge';
+import Layout from '~/layouts/PageLayout.astro';
+import SinglePost from '~/components/blog/SinglePost.astro';
+
+import { getStaticPathsBlogPost } from '~/utils/blog';
+import type { MetaData } from '~/types';
+
+export const prerender = true;
+
+export const getStaticPaths = (async () => {
+  return await getStaticPathsBlogPost();
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { post } = Astro.props as Props;
+
+const metadata = merge({
+  title: 'Convenções do Beholders ',
+  description: '',
+}) as MetaData;
+---
+
+<Layout metadata={metadata}>
+  <SinglePost post={{ ...post, image: '' }} url={''}>
+    {docs.Content ? <docs.Content /> : <Fragment set:html={post.content || ''} />}
+  </SinglePost>
+</Layout>

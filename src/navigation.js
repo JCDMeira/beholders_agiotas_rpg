@@ -25,6 +25,10 @@ export const headerData = {
       // ],
     },
     {
+      text: 'Manual',
+      href: '/manual',
+    },
+    {
       text: 'Sobre os Personagens',
       links: [
         {
